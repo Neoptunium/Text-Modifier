@@ -1,6 +1,6 @@
 # Text-Modifier Infomration 
 
- This is a program that allows you to input any text and you can choose for it to either change to all lowercase, uppercase, or even convert it to Moris Code. In addition, you can check the character count and word count on the input you give. In order for it to work you have to do the following;
+ This is a program that allows you to input any text and you can choose for it to either change to all lowercase, uppercase, or even convert it to Morris Code. In addition, you can check the character count and word count on the input you give. In order for it to work you have to do the following;
 
 Install all the required dependencies
 
