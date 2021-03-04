@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(118, 215, 245);
+}
+
+.wrapper {
+    width: 700px;
+    margin: 0 auto;
+    border-radius: 30px;
+    background: rgb(0, 116, 151);
+    padding: 20px;
+}
+
+header, footer, main {
+    background-color: rgb(152, 227, 250);
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.mainDiv {
+    display: flex;
+}
+
+textarea, .divID , .count{
+    background-color: rgb(118, 215, 245);
+    width: 250px;
+    height: 150px;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 20px;
+    font-size: 12px;
+    line-height: 15px;
+    border:rgb(0, 116, 151);
+
+}
+
+.outputDiv{
+    background-color: rgb(118, 215, 245);
+    width: 250px;
+    height: 150px;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 20px;
+}

@@ -1,0 +1,118 @@
+
+<footer>
+<button type="button" class="btn btn-dark" onclick="copy_data(divID)"> Copy Text</button>
+&nbsp;
+<button type="button" class="btn btn-danger" onclick="resetFunction()"> Reset</button>
+<hr>
+<button type="button" class="btn btn-primary" onclick="convertToUppercase()"> Convert to Uppercase</button>
+&nbsp;
+<button type="button" class="btn btn-primary" onclick="convertToLowercase()"> Convert to Lowecase</button>
+&nbsp;
+<button type="button" class="btn btn-primary" onclick="convertToMorisCode()"> Convert to Moris Code</button>
+&nbsp;
+<br>
+<br>
+<button type="button" class="btn btn-primary" onclick="checkCharacterCount()"> Check Character Count</button>
+&nbsp;
+<button type="button" class="btn btn-primary" onclick="checkWordCount()"> Check Word Count</button>
+</footer>
+
+<script>
+ function resetFunction() {
+   location.reload();
+}
+
+function convertToUppercase() {
+    var divDelete = document.getElementById('outputDiv');
+    divDelete.remove();
+
+    var x = document.getElementById("fname");
+    var div = document.getElementById('divID');
+    div.style.display = "block";
+    div.innerHTML = x.value.toUpperCase();
+}
+
+function convertToLowercase() {
+    var divDelete = document.getElementById('outputDiv');
+    divDelete.remove();
+
+    var x = document.getElementById("fname");
+    var div = document.getElementById('divID');
+    div.style.display = "block";
+    div.innerHTML = x.value.toLowerCase();
+}
+
+function convertToMorisCode() {
+  const morseCode = {
+   "A": ".-",
+   "B": "-...",
+   "C": "-.-.",
+   "D": "-..",
+   "E": ".",
+   "F": "..-.",
+   "G": "--.",
+   "H": "....",
+   "I": "..",
+   "J": ".---",
+   "K": "-.-",
+   "L": ".-..",
+   "M": "--",
+   "N": "-.",
+   "O": "---",
+   "P": ".--.",
+   "Q": "--.-",
+   "R": ".-.",
+   "S": "...",
+   "T": "-",
+   "U": "..-",
+   "W": ".--",
+   "X": "-..-",
+   "Y": "-.--",
+   "Z": "--.."
+  }
+
+    const convertToMorse = (str) => {
+   return str.toUpperCase().split("").map(el => {
+      return morseCode[el] ? morseCode[el] : el;
+     }).join("");
+    };
+    
+    var divDelete = document.getElementById('outputDiv');
+    divDelete.remove();
+
+    var x = document.getElementById("fname");
+    var div = document.getElementById('divID');
+    div.style.display = "block";
+    div.innerHTML = convertToMorse(x.value);
+  }
+
+  function checkCharacterCount() {
+    var divDelete = document.getElementById('outputDiv');
+    divDelete.remove();
+
+    var x = document.getElementById("fname");
+    var div = document.getElementById('divID');
+    div.style.display = "block";
+    div.innerHTML = x.value.length;
+}
+
+function checkWordCount() {
+    var divDelete = document.getElementById('outputDiv');
+    divDelete.remove();
+
+  var string = document.getElementById('fname').value;
+  var length = string.split(/[^\s]+/).length - 1;
+  document.getElementById('divID').style.display = "block";
+  document.getElementById('divID').innerHTML = length;
+}
+
+function copy_data(containerid) {
+  var range = document.createRange();
+  range.selectNode(containerid); 
+  window.getSelection().removeAllRanges(); 
+  window.getSelection().addRange(range); 
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+}
+  </script>
+
